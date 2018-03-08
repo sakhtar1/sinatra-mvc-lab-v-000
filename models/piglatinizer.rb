@@ -1,4 +1,4 @@
-class PigLatinizer
+class PigLatinize
 
   def self.to_pig_latin(str)
     alpha = ('a'..'z').to_a
