@@ -1,4 +1,4 @@
-class PigLatinize
+class PigLatinizer
 
   def to_pig_latin(string)
     string.split.map do |word|
