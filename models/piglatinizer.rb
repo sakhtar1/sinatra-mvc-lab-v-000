@@ -7,7 +7,7 @@ class PigLatinizer
 
     if vowels.include?(str[0])
        word + 'ay'
-    elsif consonants.include?(str[0]) && consonants.include?(str[1])
+    elsif consonants.include?(str[0]) && consonants.include?(word[1])
       word[2..-1] + word[0..1] + 'ay'
     elsif consonants.include?(str[0])
       word[1..-1] + word[0] + 'ay'
