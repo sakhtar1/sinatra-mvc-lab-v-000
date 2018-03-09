@@ -1,19 +1,13 @@
-class PigLatinize
+class PigLatinizer
 
-  def self.to_pig_latin(str)
-    alpha = ('a'..'z').to_a
-    vowels = %w[a e i o u]
-    consonants = alpha - vowels
-
-    if vowels.include?(str[0])
-      str + 'ay'
-    elsif consonants.include?(str[0]) && consonants.include?(str[1])
-      str[2..-1] + str[0..1] + 'ay'
-    elsif consonants.include?(str[0])
-      str[1..-1] + str[0] + 'ay'
+  def to_pig_latin(string)
+    string.split.map do |word|
+    if /\A[aeiou]/i.match(word)
+      "#{word}ay"
     else
-      str # return unchanged
+      "#{word.chars.rotate(1).join}ay"
     end
+    end.join(' ')
   end
 
 end
